@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  app:
+    container_name: eCom_app
+    build:
+      context: .docker
+      dockerfile: Dockerfile
+    volumes:
+    - ./.docker/config/dev_php-fpm-pool.conf:/etc/php/7.2/fpm/pool.d/eCom.conf
+    - ./.docker/config/dev_nginx.conf:/etc/nginx/sites-available/eCom
+    - ./:/home/eCom/laravel:delegated
+    working_dir: /home/eCom/laravel
+    ports:
+    - 80:80
+    entrypoint: sh /root/entrypoint.sh
+
+  db:
+    container_name: eCom_db
+    image: mysql:5.7.23
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+    - data:/var/lib/mysql
+    - ./.docker/config/mysql_max_allowed_packet.cnf:/etc/mysql/mysql.conf.d/mysql_max_allowed_packet.cnf
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eCom
+      MYSQL_USER: eComroot
+      MYSQL_PASSWORD: secret
+
+  cache:
+    container_name: eCom_cache
+    image: redis:4.0.10
+    ports:
+    - 6379:6379
+
+volumes:
+  data:
