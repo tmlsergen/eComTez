@@ -10,7 +10,7 @@
 
                 <div class="col-sm-9 padding-right">
                     <div class="features_items"><!--features_items-->
-                        <h2 class="title text-center">Features Items</h2>
+                        <h2 class="title text-center">Öne Çıkan Ürünler</h2>
                         @foreach($products as $product)
                             @if($product->category->status==1)
                                 <div class="col-sm-4">
@@ -20,14 +20,8 @@
                                         <a href="{{url('/product-detail',$product->id)}}"><img src="{{url('products/small/',$product->image)}}" alt="" /></a>
                                         <h2>$ {{$product->price}}</h2>
                                         <p>{{$product->p_name}}</p>
-                                        <a href="{{url('/product-detail',$product->id)}}" class="btn btn-default add-to-cart">View Product</a>
+                                        <a href="{{url('/product-detail',$product->id)}}" class="btn btn-default add-to-cart">Ürünü Görüntüle</a>
                                     </div>
-                                </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                        <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -7,40 +7,22 @@
                     <div class="logo pull-left">
                         <a href="{{url('/')}}"><img src="{{asset('frontEnd/images/home/logo.png')}}" alt="" /></a>
                     </div>
-                    <div class="btn-group pull-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                USA
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">UK</a></li>
-                            </ul>
-                        </div>
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                DOLLAR
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Canadian Dollar</a></li>
-                                <li><a href="#">Pound</a></li>
-                            </ul>
-                        </div>
+                    <div class="center-block">
+                        <p>eCom Tez</p>
                     </div>
+
                 </div>
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{url('/viewcart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="{{url('/viewcart')}}"><i class="fa fa-shopping-cart"></i> Sepet</a></li>
                             @if(Auth::check())
-                                <li><a href="{{url('/myaccount')}}"><i class="fa fa-user"></i> My Account</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Logout </a>
+                                <li><a href="{{url('/myaccount')}}"><i class="fa fa-user"></i> Hesabım</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Çıkış Yap </a>
                                 </li>
                             @else
-                                <li><a href="{{url('/login_page')}}"><i class="fa fa-lock"></i> Login</a></li>
+                                <li><a href="{{url('/login_page')}}"><i class="fa fa-lock"></i> Giriş Yap</a></li>
                             @endif
                         </ul>
                     </div>
@@ -63,15 +45,14 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="{{url('/')}}" class="active">Home</a></li>
-                            <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
+                            <li><a href="{{url('/')}}" class="active">Ana Sayfa</a></li>
+                            <li class="dropdown"><a href="#">Alışveriş<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{{url('/list-products')}}">Products</a></li>
-                                    <li><a href="{{url('/myaccount')}}">Account</a></li>
-                                    <li><a href="{{url('/viewcart')}}">Cart</a></li>
+                                    <li><a href="{{url('/list-products')}}">Ürünler</a></li>
+                                    <li><a href="{{url('/viewcart')}}">Sepet</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://www.youtube.com/channel/UCH2Ir7rPaRN8ZPL9mSpclhw" target="_blank">Contact</a></li>
+                            <li><a href="https://www.youtube.com/channel/UCH2Ir7rPaRN8ZPL9mSpclhw" target="_blank">İletişim</a></li>
                         </ul>
                     </div>
                 </div>

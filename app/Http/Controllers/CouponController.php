@@ -49,7 +49,7 @@ class CouponController extends Controller
             $input_data['status']=0;
         }
         Coupon_model::create($input_data);
-        return back()->with('message','Add Coupon Already');
+        return back()->with('message','Kupon Eklendi!');
     }
 
     /**
@@ -96,7 +96,7 @@ class CouponController extends Controller
             $input_data['status']=0;
         }
         $update_coupon->update($input_data);
-        return redirect()->route('coupon.index')->with('message','Edit Coupon Already!');
+        return redirect()->route('coupon.index')->with('message','Kupon Güncellendi!');
     }
 
     /**
@@ -109,7 +109,7 @@ class CouponController extends Controller
     {
         $delete_coupon=Coupon_model::findOrFail($id);
         $delete_coupon->delete();
-        return back()->with('message','Delete Coupon Already!');
+        return back()->with('message','Kupon Silindi!');
     }
     public function applycoupon(Request $request){
         $this->validate($request,[
@@ -120,21 +120,21 @@ class CouponController extends Controller
         $total_amount_price=$input_data['Total_amountPrice'];
         $check_coupon=Coupon_model::where('coupon_code',$coupon_code)->count();
         if($check_coupon==0){
-            return back()->with('message_coupon','Your Coupon Code Not Exist!');
+            return back()->with('message_coupon','Kupon kodu yanlış!');
         }else if($check_coupon==1){
             $check_status=Coupon_model::where('status',1)->first();
             if($check_status->status==0){
-                return back()->with('message_coupon','Your Coupon was Disabled!');
+                return back()->with('message_coupon','Kuponunuz pasif olarak tanımlandı!');
             }else{
                 $expiried_date=$check_status->expiry_date;
                 $date_now=date('Y-m-d');
                 if($expiried_date<$date_now){
-                    return back()->with('message_coupon','Your Coupon was Expired!');
+                    return back()->with('message_coupon','Kuponunuzun süresi dolmuştur!');
                 }else{
                     $discount_amount_price=($total_amount_price*$check_status->amount)/100;
                     Session::put('discount_amount_price',$discount_amount_price);
                     Session::put('coupon_code',$check_status->coupon_code);
-                    return back()->with('message_apply_sucess','Your Coupon Code was Apply');
+                    return back()->with('message_apply_sucess','Kupon kodunuz kullanılmıştır!');
                 }
             }
         }

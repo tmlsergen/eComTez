@@ -14,11 +14,11 @@
                 <table class="table table-condensed">
                     <thead>
                     <tr class="cart_menu">
-                        <td class="image">Item</td>
+                        <td class="image">Eşya</td>
                         <td class="description"></td>
-                        <td class="price">Price</td>
-                        <td class="quantity">Quantity</td>
-                        <td class="total">Total</td>
+                        <td class="price">Değer</td>
+                        <td class="quantity">Miktar</td>
+                        <td class="total">Tutar</td>
                         <td></td>
                     </tr>
                     </thead>
@@ -66,8 +66,8 @@
     <section id="do_action">
         <div class="container">
             <div class="heading">
-                <h3>What would you like to do next?</h3>
-                <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+                <h3>Şimdi ne yapmak istersiniz ?</h3>
+                <p>Eğer kuponunuz varsa aşağıdaki kupon alanından kullanabilirsiniz. Yoksa devam etmek için ödeme ile devam edebilirsiniz.</p>
             </div>
             <div class="row">
                 <div class="col-sm-6">
@@ -81,12 +81,12 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="Total_amountPrice" value="{{$total_price}}">
                             <div class="form-group">
-                                <label for="coupon_code">Coupon Code</label>
+                                <label for="coupon_code">Kupon Kodu</label>
                                 <div class="controls {{$errors->has('coupon_code')?'has-error':''}}">
-                                    <input type="text" class="form-control" name="coupon_code" id="coupon_code" placeholder="Promotion By Coupon">
+                                    <input type="text" class="form-control" name="coupon_code" id="coupon_code" placeholder="Kupon ile Promosyon Sağlayın!">
                                     <span class="text-danger">{{$errors->first('coupon_code')}}</span>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Apply</button>
+                                <button type="submit" class="btn btn-primary">Kupon Onayla</button>
                             </div>
                         </form>
                     </div>
@@ -100,14 +100,14 @@
                     <div class="total_area">
                         <ul>
                             @if(Session::has('discount_amount_price'))
-                                <li>Sub Total <span>$ {{$total_price}}</span></li>
-                                <li>Coupon Discount (Code : {{Session::get('coupon_code')}}) <span>$ {{Session::get('discount_amount_price')}}</span></li>
-                                <li>Total <span>$ {{$total_price-Session::get('discount_amount_price')}}</span></li>
+                                <li>Toplam Tutar <span>$ {{$total_price}}</span></li>
+                                <li>Kupon İndirimi (Kod : {{Session::get('coupon_code')}}) <span>$ {{Session::get('discount_amount_price')}}</span></li>
+                                <li>Toplam Tutar (İndirim İle Birlikte) <span>$ {{$total_price-Session::get('discount_amount_price')}}</span></li>
                             @else
-                                <li>Total <span>$ {{$total_price}}</span></li>
+                                <li>Toplam Tutar <span>$ {{$total_price}}</span></li>
                             @endif
                         </ul>
-                        <div style="margin-left: 20px;"><a class="btn btn-default check_out" href="{{url('/check-out')}}">Check Out</a></div>
+                        <div style="margin-left: 20px;"><a class="btn btn-default check_out" href="{{url('/check-out')}}">Ödeme</a></div>
                     </div>
                 </div>
             </div>
