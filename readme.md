@@ -15,7 +15,7 @@
 4. Composer install
 > docker exec -ti eCom_app composer install
 
-(You must generate app key)
+------(You must generate app key)-------------
 > docker exec -ti eCom_app php artisan key:generate
 
 5. For migrations but i recomend to use sql file in Db file sql
