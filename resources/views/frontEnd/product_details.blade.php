@@ -63,12 +63,13 @@
                         </span><br>
                                 <span>
                             <span id="dynamic_price">{{$detail_product->price}} TL </span>
-                            <label>Quantity:</label>
-                            <input type="text" name="quantity" value="{{$totalStock}}" id="inputStock"/>
+                            <label>Miktar <abel id="tSctock">({{$totalStock}})</abel>:</label>
+                            <input type="text" name="quantity" value="1" id="inputStock"/>
+                            <input type="hidden" name="controlQua" value="" id="controlQua"/>
                             @if($totalStock>0)
                                         <button type="submit" class="btn btn-fefault cart" id="buttonAddToCart">
                                 <i class="fa fa-shopping-cart"></i>
-                                Add to cart
+                                Sepete Ekle
                             </button>
                                     @endif
                         </span>

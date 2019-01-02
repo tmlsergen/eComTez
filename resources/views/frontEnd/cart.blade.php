@@ -38,7 +38,7 @@
                                     <p>{{$cart_data->product_code}} | {{$cart_data->size}}</p>
                                 </td>
                                 <td class="cart_price">
-                                    <p>${{$cart_data->price}}</p>
+                                    <p>{{$cart_data->price}} TL</p>
                                 </td>
                                 <td class="cart_quantity">
                                     <div class="cart_quantity_button">
@@ -50,7 +50,7 @@
                                     </div>
                                 </td>
                                 <td class="cart_total">
-                                    <p class="cart_total_price">$ {{$cart_data->price*$cart_data->quantity}}</p>
+                                    <p class="cart_total_price">{{$cart_data->price*$cart_data->quantity}} TL</p>
                                 </td>
                                 <td class="cart_delete">
                                     <a class="cart_quantity_delete" href="{{url('/cart/deleteItem',$cart_data->id)}}"><i class="fa fa-times"></i></a>

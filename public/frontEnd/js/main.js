@@ -37,7 +37,7 @@ $(document).ready(function(){
                 data:{size:SizeAttr},
                 success:function(resp){
                 	var arr=resp.split("#");
-                    $("#dynamic_price").html('US $'+arr[0]);
+                    $("#dynamic_price").html(arr[0] + ' TL');
                     $("#dynamicPriceInput").val(arr[0]);
                     if(arr[1]==0){
 						$("#buttonAddToCart").hide();
@@ -46,7 +46,9 @@ $(document).ready(function(){
 					}else{
                         $("#buttonAddToCart").show();
                         $("#availableStock").text("Stokta Var");
-                        $("#inputStock").val(arr[1]);
+                        $("#inputStock").val('1');
+                        $("#tSctock").html('('+ arr[1] + ')');
+                        $('#controlQua').val(arr[1]);
 					}
                 },error:function () {
                     alert("Error Select Size");

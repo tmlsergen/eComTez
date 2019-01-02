@@ -26,34 +26,38 @@ class CartController extends Controller
         $inputToCart = $request->all();
         Session::forget('discount_amount_price');
         Session::forget('coupon_code');
-        if ($inputToCart['size'] == "") {
-            return back()->with('message', 'Lütfen Boyut Seçiniz');
-        } else {
-            $stockAvailable = DB::table('product_att')->select('stock', 'sku')->where(['products_id' => $inputToCart['products_id'],
-                'price' => $inputToCart['price']])->first();
-            if ($stockAvailable->stock >= $inputToCart['quantity']) {
-                $inputToCart['user_email'] = 'weshare@gmail.com';
-                $session_id = Session::get('session_id');
-                if (empty($session_id)) {
-                    $session_id = str_random(40);
-                    Session::put('session_id', $session_id);
-                }
-                $inputToCart['session_id'] = $session_id;
-                $sizeAtrr = explode("-", $inputToCart['size']);
-                $inputToCart['size'] = $sizeAtrr[1];
-                $inputToCart['product_code'] = $stockAvailable->sku;
-                $count_duplicateItems = Cart_model::where(['products_id' => $inputToCart['products_id'],
-                    'product_color' => $inputToCart['product_color'],
-                    'size' => $inputToCart['size']])->count();
-                if ($count_duplicateItems > 0) {
-                    return back()->with('message', 'Bu ürün sepetinizde bulunmaktadır.');
-                } else {
-                    Cart_model::create($inputToCart);
-                    return back()->with('message', 'Sepete Eklendi');
-                }
+        if ($inputToCart['quantity'] <= $inputToCart['controlQua']) {
+            if ($inputToCart['size'] == "") {
+                return back()->with('message', 'Lütfen Boyut Seçiniz');
             } else {
-                return back()->with('message', 'Stok Miktarı Geçersiz.');
+                $stockAvailable = DB::table('product_att')->select('stock', 'sku')->where(['products_id' => $inputToCart['products_id'],
+                    'price' => $inputToCart['price']])->first();
+                if ($stockAvailable->stock >= $inputToCart['quantity']) {
+                    $inputToCart['user_email'] = 'weshare@gmail.com';
+                    $session_id = Session::get('session_id');
+                    if (empty($session_id)) {
+                        $session_id = str_random(40);
+                        Session::put('session_id', $session_id);
+                    }
+                    $inputToCart['session_id'] = $session_id;
+                    $sizeAtrr = explode("-", $inputToCart['size']);
+                    $inputToCart['size'] = $sizeAtrr[1];
+                    $inputToCart['product_code'] = $stockAvailable->sku;
+                    $count_duplicateItems = Cart_model::where(['products_id' => $inputToCart['products_id'],
+                        'product_color' => $inputToCart['product_color'],
+                        'size' => $inputToCart['size']])->count();
+                    if ($count_duplicateItems > 0) {
+                        return back()->with('message', 'Bu ürün sepetinizde bulunmaktadır.');
+                    } else {
+                        Cart_model::create($inputToCart);
+                        return back()->with('message', 'Sepete Eklendi');
+                    }
+                } else {
+                    return back()->with('message', 'Stok Miktarı Geçersiz.');
+                }
             }
+        } else {
+            return back()->with('message', 'Lütfen Stok Bilgilerini Kontrol Ediniz');
         }
     }
 
@@ -81,7 +85,6 @@ class CartController extends Controller
 
         if ($stockAvailable->stock >= $updated_quantity) {
             DB::table('cart')->where('id', $id)->increment('quantity', $quantity);
-
             return back()->with('message', 'Miktar güncellendi.');
         } else {
             return back()->with('message', 'Stok hazır değil!');
