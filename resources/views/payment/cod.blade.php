@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','Review Order Page')
+@section('title','Kapıda Ödeme')
 @section('slider')
 @endsection
 @section('content')

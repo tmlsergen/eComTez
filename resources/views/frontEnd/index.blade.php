@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','Home Page')
+@section('title','Ana Sayfa')
 @section('content')
     <section>
         <div class="container">
@@ -14,17 +14,20 @@
                         @foreach($products as $product)
                             @if($product->category->status==1)
                                 <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <a href="{{url('/product-detail',$product->id)}}"><img src="{{url('products/small/',$product->image)}}" alt="" /></a>
-                                        <h2>$ {{$product->price}}</h2>
-                                        <p>{{$product->p_name}}</p>
-                                        <a href="{{url('/product-detail',$product->id)}}" class="btn btn-default add-to-cart">Ürünü Görüntüle</a>
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <a href="{{url('/product-detail',$product->id)}}"><img
+                                                            src="{{url('products/small/',$product->image)}}"
+                                                            alt=""/></a>
+                                                <h2>$ {{$product->price}}</h2>
+                                                <p>{{$product->p_name}}</p>
+                                                <a href="{{url('/product-detail',$product->id)}}"
+                                                   class="btn btn-default add-to-cart">Ürünü Görüntüle</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                             @endif
                         @endforeach
                     </div><!--features_items-->

@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','Cart Page')
+@section('title','Sepet')
 @section('slider')
 @endsection
 @section('content')

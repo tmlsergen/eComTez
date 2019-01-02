@@ -52,13 +52,16 @@
                                     <li><a href="{{url('/viewcart')}}">Sepet</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://www.youtube.com/channel/UCH2Ir7rPaRN8ZPL9mSpclhw" target="_blank">İletişim</a></li>
+                            <li><a href="https://github.com/tmlsergen/eComTez" target="_blank">İletişim</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                        <form action="{{url('search')}}">
+                            <input type="text" name="search" placeholder="Ara"/>
+                            <button class="btn btn-success" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>

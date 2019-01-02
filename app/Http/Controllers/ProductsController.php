@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category_model;
 use App\Products_model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Image;
 use Illuminate\Http\Request;
@@ -170,5 +171,24 @@ class ProductsController extends Controller
             unlink($image_small);
         }
         return back();
+    }
+
+    public function search(Request $request)
+    {
+        $this->validate($request,[
+            'search' => 'required'
+        ]);
+        $search_val = $request->search;
+
+        $data = DB::table('products')
+            ->join('categories','categories.id','products.categories_id')
+            ->where('p_name', 'like', '%'.$search_val.'%')
+            ->get();
+
+
+        return view('frontEnd.product_search', [
+            'products' => $data,
+            'searchData' => $search_val,
+        ]);
     }
 }
