@@ -15,6 +15,7 @@ class CheckOutController extends Controller
         $user_login=User::where('id',Auth::id())->first();
         return view('checkout.index',compact('countries','user_login'));
     }
+
     public function submitcheckout(Request $request){
        $this->validate($request,[
            'billing_name'=>'required',

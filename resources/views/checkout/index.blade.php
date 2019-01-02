@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','checkOut Page')
+@section('title','Ödeme')
 @section('slider')
 @endsection
 @section('content')
@@ -14,21 +14,21 @@
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="login-form"><!--login form-->
                         <input type="hidden" name="_token" value="{{csrf_token()}}">
-                        <legend>Billing To</legend>
+                        <legend>Fatura Sahibi</legend>
                         <div class="form-group {{$errors->has('billing_name')?'has-error':''}}">
-                            <input type="text" class="form-control" name="billing_name" id="billing_name" value="{{$user_login->name}}" placeholder="Billing Name">
+                            <input type="text" class="form-control" name="billing_name" id="billing_name" value="{{$user_login->name}}" placeholder="İsim">
                             <span class="text-danger">{{$errors->first('billing_name')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('billing_address')?'has-error':''}}">
-                            <input type="text" class="form-control" value="{{$user_login->address}}" name="billing_address" id="billing_address" placeholder="Billing Address">
+                            <input type="text" class="form-control" value="{{$user_login->address}}" name="billing_address" id="billing_address" placeholder="Adres">
                             <span class="text-danger">{{$errors->first('billing_address')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('billing_city')?'has-error':''}}">
-                            <input type="text" class="form-control" name="billing_city" value="{{$user_login->city}}" id="billing_city" placeholder="Billing City">
+                            <input type="text" class="form-control" name="billing_city" value="{{$user_login->city}}" id="billing_city" placeholder="Şehir">
                             <span class="text-danger">{{$errors->first('billing_city')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('billing_state')?'has-error':''}}">
-                            <input type="text" class="form-control" name="billing_state" value="{{$user_login->state}}" id="billing_state" placeholder=" Billing State">
+                            <input type="text" class="form-control" name="billing_state" value="{{$user_login->state}}" id="billing_state" placeholder="Mahalle">
                             <span class="text-danger">{{$errors->first('billing_state')}}</span>
                         </div>
                         <div class="form-group">
@@ -39,16 +39,16 @@
                             </select>
                         </div>
                         <div class="form-group {{$errors->has('billing_pincode')?'has-error':''}}">
-                            <input type="text" class="form-control" name="billing_pincode" value="{{$user_login->pincode}}" id="billing_pincode" placeholder=" Billing Pincode">
+                            <input type="text" class="form-control" name="billing_pincode" value="{{$user_login->pincode}}" id="billing_pincode" placeholder="Posta Kodu">
                             <span class="text-danger">{{$errors->first('billing_pincode')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('billing_mobile')?'has-error':''}}">
-                            <input type="text" class="form-control" name="billing_mobile" value="{{$user_login->mobile}}" id="billing_mobile" placeholder="Billing Mobile">
+                            <input type="text" class="form-control" name="billing_mobile" value="{{$user_login->mobile}}" id="billing_mobile" placeholder="Telefon">
                             <span class="text-danger">{{$errors->first('billing_mobile')}}</span>
                         </div>
 
                         <span>
-                            <input type="checkbox" class="checkbox" name="checkme" id="checkme">Shipping Address same as Billing Address
+                            <input type="checkbox" class="checkbox" name="checkme" id="checkme">Fatura Adresi ile Kargo Adresi Aynı olsun
                         </span>
                     </div><!--/login form-->
                 </div>
@@ -59,19 +59,19 @@
                     <div class="signup-form"><!--sign up form-->
                         <legend>Shipping To</legend>
                         <div class="form-group {{$errors->has('shipping_name')?'has-error':''}}">
-                            <input type="text" class="form-control" name="shipping_name" id="shipping_name" value="" placeholder="Shipping Name">
+                            <input type="text" class="form-control" name="shipping_name" id="shipping_name" value="" placeholder="Kargolanıcak İsim">
                             <span class="text-danger">{{$errors->first('shipping_name')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('shipping_address')?'has-error':''}}">
-                            <input type="text" class="form-control" value="" name="shipping_address" id="shipping_address" placeholder="Shipping Address">
+                            <input type="text" class="form-control" value="" name="shipping_address" id="shipping_address" placeholder="Kargolanıcak Adres">
                             <span class="text-danger">{{$errors->first('shipping_address')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('shipping_city')?'has-error':''}}">
-                            <input type="text" class="form-control" name="shipping_city" value="" id="shipping_city" placeholder="Shipping City">
+                            <input type="text" class="form-control" name="shipping_city" value="" id="shipping_city" placeholder="Kargolanacak Şehir">
                             <span class="text-danger">{{$errors->first('shipping_city')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('shipping_state')?'has-error':''}}">
-                            <input type="text" class="form-control" name="shipping_state" value="" id="shipping_state" placeholder="Shipping State">
+                            <input type="text" class="form-control" name="shipping_state" value="" id="shipping_state" placeholder="Kargolanacak Mahalle">
                             <span class="text-danger">{{$errors->first('shipping_state')}}</span>
                         </div>
                         <div class="form-group">
@@ -82,14 +82,14 @@
                             </select>
                         </div>
                         <div class="form-group {{$errors->has('shipping_pincode')?'has-error':''}}">
-                            <input type="text" class="form-control" name="shipping_pincode" value="" id="shipping_pincode" placeholder="Shipping Pincode">
+                            <input type="text" class="form-control" name="shipping_pincode" value="" id="shipping_pincode" placeholder="Posta Kodu">
                             <span class="text-danger">{{$errors->first('shipping_pincode')}}</span>
                         </div>
                         <div class="form-group {{$errors->has('shipping_mobile')?'has-error':''}}">
-                            <input type="text" class="form-control" name="shipping_mobile" value="" id="shipping_mobile" placeholder="Shipping Mobile">
+                            <input type="text" class="form-control" name="shipping_mobile" value="" id="shipping_mobile" placeholder="Telefon">
                             <span class="text-danger">{{$errors->first('shipping_mobile')}}</span>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="float: right;">CheckOut</button>
+                        <button type="submit" class="btn btn-primary" style="float: right;">Ödeme</button>
                     </div><!--/sign up form-->
                 </div>
             </form>

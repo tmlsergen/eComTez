@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="step-one">
-            <h2 class="heading">Shipping To</h2>
+            <h2 class="heading">Adress Bilgisi</h2>
         </div>
         <div class="row">
             <form action="{{url('/submit-order')}}" method="post" class="form-horizontal">
@@ -37,13 +37,13 @@
                         <table class="table table-hover">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Country</th>
-                                <th>Pincode</th>
-                                <th>Mobile</th>
+                                <th>İsim</th>
+                                <th>Adres</th>
+                                <th>Şehir</th>
+                                <th>Mahalle</th>
+                                <th>Ülke</th>
+                                <th>Posta Kodu</th>
+                                <th>Telefon</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -61,17 +61,17 @@
                     </div>
                     <section id="cart_items">
                         <div class="review-payment">
-                            <h2>Review & Payment</h2>
+                            <h2>Sepet Görünümü & Ödeme</h2>
                         </div>
                         <div class="table-responsive cart_info">
                             <table class="table table-condensed">
                                 <thead>
                                 <tr class="cart_menu">
-                                    <td class="image">Item</td>
+                                    <td class="image">Ürün</td>
                                     <td class="description"></td>
-                                    <td class="price">Price</td>
-                                    <td class="quantity">Quantity</td>
-                                    <td class="total">Total</td>
+                                    <td class="price">Ürün Fiyatı</td>
+                                    <td class="quantity">Miktar</td>
+                                    <td class="total">Toplam Tutar</td>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -90,13 +90,13 @@
                                         <p>{{$cart_data->product_code}} | {{$cart_data->size}}</p>
                                     </td>
                                     <td class="cart_price">
-                                        <p>${{$cart_data->price}}</p>
+                                        <p>{{$cart_data->price}} TL</p>
                                     </td>
                                     <td class="cart_quantity">
                                         <p>{{$cart_data->quantity}}</p>
                                     </td>
                                     <td class="cart_total">
-                                        <p class="cart_total_price">$ {{$cart_data->price*$cart_data->quantity}}</p>
+                                        <p class="cart_total_price">{{$cart_data->price*$cart_data->quantity}} TL</p>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -105,22 +105,22 @@
                                     <td colspan="2">
                                         <table class="table table-condensed total-result">
                                             <tr>
-                                                <td>Cart Sub Total</td>
-                                                <td>$ {{$total_price}}</td>
+                                                <td>Sepet Tutarı</td>
+                                                <td>{{$total_price}} TL</td>
                                             </tr>
                                             @if(Session::has('discount_amount_price'))
                                                 <tr class="shipping-cost">
-                                                    <td>Coupon Discount</td>
+                                                    <td>Kupon İndirim Tutarı</td>
                                                     <td>$ {{Session::get('discount_amount_price')}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Total</td>
-                                                    <td><span>$ {{$total_price-Session::get('discount_amount_price')}}</span></td>
+                                                    <td><span>{{$total_price-Session::get('discount_amount_price')}} TL</span></td>
                                                 </tr>
                                             @else
                                                 <tr>
                                                     <td>Total</td>
-                                                    <td><span>$ {{$total_price}}</span></td>
+                                                    <td><span>{{$total_price}} TL</span></td>
                                                 </tr>
                                             @endif
                                         </table>
@@ -130,14 +130,14 @@
                             </table>
                         </div>
                         <div class="payment-options">
-                            <span>Select Payment Method : </span>
+                            <span>Ödeme Yöntemini Seçiniz : </span>
                         <span>
-                            <label><input type="radio" name="payment_method" value="COD" checked> Cash On Delivery</label>
+                            <label><input type="radio" name="payment_method" value="COD" checked> Kapıda Nakit Ödeme</label>
                         </span>
                             <span>
-                            <label><input type="radio" name="payment_method" value="Paypal"> Paypal</label>
+                            <label><input type="radio" name="payment_method" value="CreditCart"> Kredi Kartı</label>
                         </span>
-                            <button type="submit" class="btn btn-primary" style="float: right;">Order Now</button>
+                            <button type="submit" class="btn btn-primary" style="float: right;">Sipariş Et</button>
                         </div>
                     </section>
 

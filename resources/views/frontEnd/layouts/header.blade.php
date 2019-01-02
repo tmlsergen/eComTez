@@ -22,7 +22,7 @@
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Çıkış Yap </a>
                                 </li>
                             @else
-                                <li><a href="{{url('/login_page')}}"><i class="fa fa-lock"></i> Giriş Yap</a></li>
+                                <li><a href="{{url('/login_page')}}"><i class="fa fa-lock"></i> Giriş Yap ya da Üye Ol</a></li>
                             @endif
                         </ul>
                     </div>
