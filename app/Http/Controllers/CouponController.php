@@ -111,6 +111,7 @@ class CouponController extends Controller
         $delete_coupon->delete();
         return back()->with('message','Kupon Silindi!');
     }
+
     public function applycoupon(Request $request){
         $this->validate($request,[
             'coupon_code'=>'required'

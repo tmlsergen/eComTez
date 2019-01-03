@@ -39,6 +39,7 @@ class OrdersController extends Controller
     public function cod()
     {
         $user_order = Orders_model::where('users_id', Auth::id())->orderby('created_at', 'desc')->first();
+        Cart_model::truncate();
         return view('payment.cod', compact('user_order'));
     }
 
@@ -67,5 +68,21 @@ class OrdersController extends Controller
 
         \Mail::to(Auth::user())->send(new Order($data));
         return view('payment.payment', compact('data'));
+    }
+
+
+    public function indexAdmin()
+    {
+        $menu_active = 6;
+        $orders = Db::table('orders')->get();
+
+        return view('backEnd.orders.index', compact('orders','menu_active'));
+    }
+
+    public function destroy($id)
+    {
+        $del_order = Orders_model::findorfail($id);
+        $del_order->delete();
+        return back()->with('message', 'Silme işlemi başarılı');
     }
 }

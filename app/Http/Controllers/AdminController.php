@@ -45,26 +45,9 @@ class AdminController extends Controller
         if(Hash::check($current_password,$check_password->password)){
             $password=bcrypt($data['pwd_new']);
             User::where('email',$email_login)->update(['password'=>$password]);
-            return redirect('/admin/settings')->with('message','Password Update Successfully');
+            return redirect('/admin/settings')->with('message','Şifre Güncelleme İşlemi Başarılı.');
         }else{
-            return redirect('/admin/settings')->with('message','InCorrect Current Password');
+            return redirect('/admin/settings')->with('message','Lütfen Eski Şifresnizi Kontrol Ediniz.');
         }
     }
-
-
-
-
-
-    /*public function login(Request $request){
-        if($request->isMethod('post')){
-            $data=$request->input();
-            if(Auth::attempt(['email'=>$data['email'],'password'=>$data['password'],'admin'=>'1'])){
-                echo 'success'; die();
-            }else{
-                return redirect('admin')->with('message','Account is Incorrect!');
-            }
-        }else{
-            return view('backEnd.login');
-        }
-    }*/
 }
