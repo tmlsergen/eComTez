@@ -1,5 +1,5 @@
 @extends('frontEnd.layouts.master')
-@section('title','Review Order Page')
+@section('title','Sipariş Önizleme')
 @section('slider')
 @endsection
 @section('content')
@@ -10,7 +10,6 @@
         <div class="row">
             <form action="{{url('/submit-order')}}" method="post" class="form-horizontal">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
-
                 <input type="hidden" name="users_id" value="{{$shipping_address->users_id}}">
                 <input type="hidden" name="users_email" value="{{$shipping_address->users_email}}">
                 <input type="hidden" name="name" value="{{$shipping_address->name}}">

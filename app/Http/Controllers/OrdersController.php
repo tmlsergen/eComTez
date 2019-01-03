@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use App\Mail\Order;
 
 class OrdersController extends Controller
 {
@@ -37,15 +38,34 @@ class OrdersController extends Controller
 
     public function cod()
     {
-        $user_order = Orders_model::where('users_id', Auth::id())->first();
+        $user_order = Orders_model::where('users_id', Auth::id())->orderby('created_at', 'desc')->first();
         return view('payment.cod', compact('user_order'));
     }
 
 
-    public function paycart(Request $request)
+    public function paycart()
     {
-        $who_buying = Orders_model::where('users_id', Auth::id())->first();
-        dd($who_buying);exit;
+        $who_buying = Orders_model::where('users_id', Auth::id())->orderby('created_at', 'desc')->first();
         return view('payment.paycart', compact('who_buying'));
+    }
+
+    public function cartpayment(Request $request)
+    {
+        $data = $request->all();
+        $this->validate($request, [
+            'user_id' => 'required',
+            'user_name' => 'required',
+            'user_email' => 'required|email',
+            'user_total' => 'required',
+            'card_name' => 'required',
+            'card_number' => 'required|integer|min:16|max:16',
+            'date' => 'required|integer|min:4|max:4',
+            'cvc' => 'required|integer|min:3|max:3',
+            'card_type' => 'required',
+        ]);
+        Cart_model::truncate();
+
+        \Mail::to(Auth::user())->send(new Order($data));
+        return view('payment.payment', compact('data'));
     }
 }

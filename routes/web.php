@@ -43,6 +43,7 @@ Route::group(['middleware'=>'FrontLogin_middleware'],function (){
     Route::post('/submit-order','OrdersController@order');
     Route::get('/cod','OrdersController@cod');
     Route::get('/pay-with-card','OrdersController@paycart');
+    Route::get('/payment-confirmed','OrdersController@cartpayment');
     Route::post('/comments','CommentsController@store');
     Route::get('/comments/{id}','CommentsController@destroy');
 });

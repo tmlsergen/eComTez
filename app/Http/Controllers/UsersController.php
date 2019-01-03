@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart_model;
 use App\Profile_model;
 use App\User;
 use Illuminate\Http\Request;
@@ -32,8 +33,9 @@ class UsersController extends Controller
         ]);
         $input_data = $request->all();
         $input_data['password'] = Hash::make($input_data['password']);
-        User::create($input_data);
-        return back()->with('message', 'Bu email adı altında zaten bir üyemiz var!');
+        $user = User::create($input_data);
+        \auth()->login($user);
+        return redirect('/')->with('message', 'Başarı ile kayıt oldunuz!');
     }
 
     public function login(Request $request)
@@ -50,7 +52,8 @@ class UsersController extends Controller
     public function logout()
     {
         Auth::logout();
-        Session::forget('frontSession');
+        Session::flush();
+        Cart_model::truncate();
         return redirect('/')->with('message', 'Başarıyla Çıkış Yapıldı');
     }
 

@@ -52,5 +52,5 @@
             </div>
         </div>
     </div>
-    <div style="margin-bottom: 20px;"></div>
+    <div style="padding-bottom: 200px;"></div>
 @endsection
