@@ -19,6 +19,7 @@ RUN aptitude install -y php7.2-fpm
 RUN aptitude install -y php7.2-mbstring
 RUN aptitude install -y php7.2-xml
 RUN aptitude install -y php7.2-pdo-mysql
+RUN aptitude install -y php7.2-gd
 
 RUN aptitude install -y nginx
 
