@@ -53,26 +53,40 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table eCom.categories: 8 rows
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(12, 0, 'Car', 'Car Category', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:32:33', '2018-11-16 05:00:00');
+	(31, 25, 'Buz Dolabı', 'Buz', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:06:03', '2019-01-04 23:06:03');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(10, 0, 'House', 'House Category', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:31:29', '2018-11-16 05:05:53');
+	(30, 25, 'Bulaşık Makinesi', 'bulaşık', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:05:44', '2019-01-04 23:06:11');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(11, 0, 'Shoes', 'Shoes Category', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:32:14', '2018-11-16 05:07:15');
+	(29, 25, 'Ankastre', 'ankastre', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:05:21', '2019-01-04 23:05:21');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(13, 0, 'Computer', 'Computer Category', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:33:26', '2018-11-16 05:05:43');
+	(28, 0, 'Tv - Ses ve Görüntü Sistemleri', 'TV', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:04:59', '2019-01-04 23:04:59');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(14, 0, 'Cloths', 'Cloths Category', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:34:31', '2018-11-16 05:05:18');
+	(27, 0, 'Cep Telefonu ve Aksesuar', 'Cep Tel', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:04:40', '2019-01-04 23:04:40');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(15, 12, 'Toyota', 'Toyota Sub Category of Car', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:35:08', '2018-11-16 04:54:49');
+	(26, 0, 'Bilgisayar', 'Bilgisayar', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:04:22', '2019-01-04 23:04:22');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(16, 10, 'Link House', 'Link House Sub Category', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:56:56', '2018-11-16 05:07:05');
+	(25, 0, 'Beyaz Eşya', 'Eşyalar', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:04:04', '2019-01-04 23:04:04');
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(17, 11, 'Man Shoes', 'Man Shoes Sub Category of Shoes', 'http://wornnarith.cambosoft.com', 1, NULL, '2018-10-23 00:58:13', '2018-11-16 04:53:44');
+	(32, 26, 'Bilgisayar Bileşenleri', 'Bileşen', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:06:51', '2019-01-04 23:06:51');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(33, 26, 'Laptop', 'Dizüstü', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:07:38', '2019-01-04 23:07:38');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(34, 26, 'Masaüstü', 'Computer', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:08:00', '2019-01-04 23:08:00');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(35, 27, 'Apple', 'apple', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:08:47', '2019-01-04 23:08:47');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(36, 27, 'Samsung', 'asdasd', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:09:04', '2019-01-04 23:09:04');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(37, 27, 'Hafıza Kartı', 'asdasd', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:09:21', '2019-01-04 23:09:21');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(38, 28, 'Lg', 'asdasd', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:09:45', '2019-01-04 23:09:45');
+INSERT INTO `categories` (`id`, `parent_id`, `name`, `description`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(39, 28, 'Regal', 'asdasd', 'https://github.com/tmlsergen/eComTez', 1, NULL, '2019-01-04 23:10:05', '2019-01-04 23:10:05');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 -- Dumping structure for table eCom.comments
@@ -626,10 +640,12 @@ CREATE TABLE IF NOT EXISTS `coupons` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table eCom.coupons: 0 rows
 /*!40000 ALTER TABLE `coupons` DISABLE KEYS */;
+INSERT INTO `coupons` (`id`, `coupon_code`, `amount`, `amount_type`, `expiry_date`, `status`, `created_at`, `updated_at`) VALUES
+	(7, 'Coupon001', 43, 'Percentage', '2052-06-06', 1, '2019-01-04 23:53:17', '2019-01-04 23:53:17');
 /*!40000 ALTER TABLE `coupons` ENABLE KEYS */;
 
 -- Dumping structure for table eCom.delivery_address
@@ -721,22 +737,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 -- Dumping data for table eCom.orders: 8 rows
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(38, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:25:02', '2019-01-02 23:25:02');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(37, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:21:00', '2019-01-02 23:21:00');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(36, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:17:27', '2019-01-02 23:17:27');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(34, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:15:51', '2019-01-02 23:15:51');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(35, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:16:22', '2019-01-02 23:16:22');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(33, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:13:54', '2019-01-02 23:13:54');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(32, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:12:59', '2019-01-02 23:12:59');
-INSERT INTO `orders` (`id`, `users_id`, `users_email`, `name`, `address`, `city`, `state`, `pincode`, `country`, `mobile`, `shipping_charges`, `coupon_code`, `coupon_amount`, `order_status`, `payment_method`, `grand_total`, `created_at`, `updated_at`) VALUES
-	(31, 1, 'demo@gmail.com', 'Sergen Temel', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', '34196', 'Turkey', '5054702896', 0.00, 'NO Coupon', '0', 'success', 'CreditCart', '112', '2019-01-02 23:12:34', '2019-01-02 23:12:34');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 -- Dumping structure for table eCom.password_resets
@@ -766,28 +766,40 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table eCom.products: 9 rows
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(28, 15, 'Lexus Rx 330', '12152', 'White', 'EXCELLENT SAFETY FOR YOUR FAMILY<br>Child Safety Locks, Electronic Stability Control, Brake Assist, 4-Wheel ABS, Tire Pressure Monitoring System, 4-Wheel Disc Brakes Safety equipment includes Child Safety Locks', 15.00, '1544063712-lexus-rx-330.jpg', '2018-12-05 22:35:12', '2018-12-05 22:43:48');
+	(46, 31, 'Simens Buz Dolabı', 'simo5957', 'Beyaz', 'Büyük Buz Dolabı 5 kapılı', 453.00, '1546645614-simens-buz-dolabi.jpg', '2019-01-04 23:46:54', '2019-01-04 23:46:54');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(27, 15, '2019 New Toyota Highlander XLE V6', 'XLE V6 FWD', 'White', 'Sunroof, Heated Leather Seats, NAV, 3rd Row Seat, Alloy Wheels, Quad Seats, Rear Air, Power Liftgate. XLE trim. Warranty 5 yrs/60k Miles - Drivetrain Warranty; AND MORE!', 20.00, '1544063425-2019-new-toyota-highlander-xle-v6.jpg', '2018-12-05 22:30:25', '2018-12-05 22:43:57');
+	(47, 31, 'Vestel Buzdolabı', 'ves4569', 'Beyaz', 'Uygun Fiyata Buz Dolabı A+ enerji&nbsp;', 150.00, '1546645699-vestel-buzdolabi.jpg', '2019-01-04 23:48:20', '2019-01-04 23:48:20');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(29, 12, '2018 Toyota Prius', '1252', 'Red', 'VEHICLE FEATURES<br>Rear Spoiler, MP3 Player, Remote Trunk Release, Keyless Entry, Privacy Glass.&nbsp;', 5.00, '1544063924-2018-toyota-prius.jpg', '2018-12-05 22:38:44', '2018-12-05 22:43:38');
+	(43, 33, 'Asus Rog', '12341652', 'Mavi', 'i7 gtx 1050', 888.00, '1546645259-asus-rog.jpg', '2019-01-04 23:40:59', '2019-01-04 23:40:59');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(30, 16, 'Link House New LC2', 'L_1252', 'Gray', 'Borey Peng Huoth Cambodia', 10.00, '1544064142-link-house-new-lc2.jpg', '2018-12-05 22:42:22', '2018-12-05 22:42:22');
+	(44, 33, 'Dell İnspiron', '123132132132', 'Siyah', 'i7 1050ti gtx<br>128 ssd 1 tb hdd', 1258.00, '1546645399-dell-inspiron.jpg', '2019-01-04 23:43:19', '2019-01-04 23:43:19');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(31, 10, 'House', '5214', 'White and Brown', 'House For Sale', 10.00, '1544064430-house.jpg', '2018-12-05 22:47:10', '2018-12-05 22:47:10');
+	(45, 34, 'Naggas', 'nigga15896', 'Mavi', 'Kasa', 986.00, '1546645499-naggas.jpg', '2019-01-04 23:44:59', '2019-01-04 23:44:59');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(32, 11, 'Vionic Shoes Brand', '5265', 'All Colors', 'Women Shoes', 12.00, '1544064607-vionic-shoes-brand.jpg', '2018-12-05 22:50:07', '2018-12-05 22:50:07');
+	(42, 32, 'İşlemci AMD', 'ryzo1235', 'Altın', '3GHZ işlemci', 550.00, '1546645209-islemci-amd.jpg', '2019-01-04 23:40:10', '2019-01-04 23:40:10');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(33, 17, 'Cole Haan', 'KHR 775659.29', 'Brown', 'Men\'s Original Grand Wingtip Oxfords', 5.00, '1544064903-cole-haan.jpg', '2018-12-05 22:55:03', '2018-12-05 22:55:03');
+	(41, 32, 'Asus Batarya', 'as54865', 'Siyah', 'Asus Batarya', 65.00, '1546645128-asus-batarya.jpg', '2019-01-04 23:38:48', '2019-01-04 23:38:48');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(34, 13, 'Lenovo ThinkPad', '1252', 'Black', 'Lenovo Thinkpad From China', 2.00, '1544065331-lenovo-thinkpad.jpg', '2018-12-05 23:02:12', '2018-12-05 23:02:12');
+	(40, 37, 'Samsung Hafıza Kartı', '124565214', 'Siyah', '32GB Hafıza Kartı', 15.00, '1546645056-samsung-hafiza-karti.jpg', '2019-01-04 23:37:36', '2019-01-04 23:37:36');
 INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
-	(35, 14, 'Cloths', 'The Man', 'Black', 'Cloths Description here', 2.00, '1544065493-cloths.png', '2018-12-05 23:04:54', '2018-12-05 23:04:54');
+	(39, 36, 'Galaxy Note 9', 'note 9', 'Yeşil', 'Galaksi not 9', 190.00, '1546644979-galaxy-note-9.jpg', '2019-01-04 23:36:19', '2019-01-04 23:36:19');
+INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+	(38, 35, 'iPhone X', 'x123456', 'Yeşil', 'Ayfon X', 150.00, '1546644779-iphone-x.jpg', '2019-01-04 23:32:59', '2019-01-04 23:32:59');
+INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+	(37, 39, 'Regal 32R', '32R4020H', 'Mavi', 'Regal TV', 150.00, '1546644704-regal-32r.jpg', '2019-01-04 23:31:45', '2019-01-04 23:31:45');
+INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+	(36, 38, 'Lg 43LK', '43LK5900', 'Siyah', '<b>LG</b> TELEVİZYON', 150.00, '1546644519-lg-43lk.jpg', '2019-01-04 23:28:39', '2019-01-04 23:28:39');
+INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+	(48, 31, 'Vestel Buzdolabı', 'ves4569', 'Beyaz', 'Uygun Fiyata Buz Dolabı A+ enerji&nbsp;', 150.00, '1546645699-vestel-buzdolabi.jpg', '2019-01-04 23:48:20', '2019-01-04 23:48:20');
+INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+	(49, 30, 'Bosh Programlı Makine', 'bosh87654', 'Pembe', 'Pempe Buz Dolabı Görünümlü Bulaşık makinesi', 888.00, '1546645837-bosh-programli-makine.jpg', '2019-01-04 23:50:37', '2019-01-04 23:50:37');
+INSERT INTO `products` (`id`, `categories_id`, `p_name`, `p_code`, `p_color`, `description`, `price`, `image`, `created_at`, `updated_at`) VALUES
+	(50, 29, 'Hoover Ankastre Set', 'hovo4897', 'Siyah', 'Kullanışlı uygun fiyatlı', 4521.00, '1546645913-hoover-ankastre-set.jpg', '2019-01-04 23:51:53', '2019-01-04 23:51:53');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 -- Dumping structure for table eCom.product_att
@@ -802,58 +814,16 @@ CREATE TABLE IF NOT EXISTS `product_att` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table eCom.product_att: 24 rows
 /*!40000 ALTER TABLE `product_att` DISABLE KEYS */;
 INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(14, 34, 'SKU-Lenovo X1', '15 inch', 10.00, 2, '2018-12-05 23:08:43', '2018-12-05 23:08:43');
+	(37, 44, '123132132132', 'Small', 88.00, 150, '2019-01-04 23:44:01', '2019-01-04 23:44:01');
 INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(13, 35, 'SKU-Red', 'S', 2.00, 5, '2018-12-05 23:08:08', '2018-12-05 23:08:08');
+	(36, 38, 'x123456', 'Big', 88.00, 150, '2019-01-04 23:33:40', '2019-01-04 23:33:40');
 INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(12, 35, 'SKU-White', 'L', 6.00, 2, '2018-12-05 23:07:42', '2018-12-05 23:07:42');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(11, 35, 'SKU-Black', 'M', 5.00, 10, '2018-12-05 23:07:11', '2018-12-05 23:07:11');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(15, 34, 'SKU-Carbon', '14 inch', 4.00, 5, '2018-12-05 23:09:05', '2018-12-05 23:09:05');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(16, 33, 'SKU-Haan1', '25', 12.00, 3, '2018-12-05 23:09:45', '2018-12-05 23:09:45');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(17, 33, 'SKU-Haan2', '22', 10.00, 1, '2018-12-05 23:09:58', '2018-12-05 23:09:58');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(18, 33, 'SKU-Haan3', '19', 2.00, 3, '2018-12-05 23:10:16', '2018-12-05 23:10:16');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(19, 32, 'SKU-Vionic1', '20', 10.00, 5, '2018-12-05 23:11:02', '2018-12-05 23:11:02');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(20, 32, 'SKU-Vionic2', '20', 15.00, 4, '2018-12-05 23:11:24', '2018-12-05 23:11:24');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(21, 32, 'SKU-Vionic3', '30', 20.00, 1, '2018-12-05 23:11:38', '2018-12-05 23:11:38');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(22, 31, 'SKU-House1', '5*20', 25.00, 4, '2018-12-05 23:12:13', '2018-12-05 23:12:13');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(23, 31, 'SKU-House2', '10*10', 20.00, 2, '2018-12-05 23:12:30', '2018-12-05 23:12:30');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(24, 31, 'SKU-House3', '20*20', 20.00, 5, '2018-12-05 23:12:46', '2018-12-05 23:12:46');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(25, 30, 'SKU-Link House1', 'Small', 10.00, 5, '2018-12-05 23:13:06', '2018-12-05 23:13:06');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(26, 30, 'SKU-House2', 'Medium', 15.00, 23, '2018-12-05 23:13:23', '2018-12-05 23:13:23');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(27, 30, 'SKU-House3', 'Large', 5.00, 2, '2018-12-05 23:14:55', '2018-12-05 23:14:55');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(28, 29, 'SKU-Prius1', 'One Size', 12.00, 2, '2018-12-05 23:15:43', '2018-12-05 23:15:43');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(29, 28, 'SKU-Lexus Red', 'Size Red', 12.00, 12, '2018-12-05 23:16:28', '2018-12-05 23:16:28');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(30, 28, 'SKU-Lexus2', 'Size Black', 11.00, 22, '2018-12-05 23:16:48', '2018-12-05 23:16:48');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(31, 28, 'SKU-Lexus3', 'Size White', 12.00, 2, '2018-12-05 23:17:02', '2018-12-05 23:17:02');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(32, 27, 'SKU-Hilander', 'Size Black', 50.00, 10, '2018-12-05 23:17:35', '2018-12-05 23:17:35');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(33, 27, 'SKU-Hilander1', 'Size White', 20.00, 10, '2018-12-05 23:17:46', '2018-12-05 23:17:46');
-INSERT INTO `product_att` (`id`, `products_id`, `sku`, `size`, `price`, `stock`, `created_at`, `updated_at`) VALUES
-	(34, 27, 'SKU-Hilande3', 'Size Red', 20.00, 10, '2018-12-05 23:18:01', '2018-12-05 23:18:01');
+	(35, 36, '43LK5900', 'Big', 99.00, 150, '2019-01-04 23:30:19', '2019-01-04 23:30:19');
 /*!40000 ALTER TABLE `product_att` ENABLE KEYS */;
 
 -- Dumping structure for table eCom.tblgallery
@@ -865,64 +835,62 @@ CREATE TABLE IF NOT EXISTS `tblgallery` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table eCom.tblgallery: 27 rows
 /*!40000 ALTER TABLE `tblgallery` DISABLE KEYS */;
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(8, 27, '7664271544063472.jpg', '2018-12-05 22:31:12', '2018-12-05 22:31:12');
+	(60, 50, '8901831546645928.jpg', '2019-01-04 23:52:09', '2019-01-04 23:52:09');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(9, 27, '6768551544063472.jpg', '2018-12-05 22:31:13', '2018-12-05 22:31:13');
+	(59, 50, '955771546645928.jpg', '2019-01-04 23:52:08', '2019-01-04 23:52:08');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(10, 27, '4131281544063473.jpg', '2018-12-05 22:31:13', '2018-12-05 22:31:13');
+	(58, 50, '784841546645927.jpg', '2019-01-04 23:52:08', '2019-01-04 23:52:08');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(11, 28, '6720891544063734.jpg', '2018-12-05 22:35:34', '2018-12-05 22:35:34');
+	(57, 49, '9835531546645847.jpg', '2019-01-04 23:50:48', '2019-01-04 23:50:48');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(12, 28, '4686631544063734.jpg', '2018-12-05 22:35:34', '2018-12-05 22:35:34');
+	(56, 46, '1771291546645626.jpg', '2019-01-04 23:47:06', '2019-01-04 23:47:06');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(13, 28, '5960611544063759.jpeg', '2018-12-05 22:35:59', '2018-12-05 22:35:59');
+	(55, 46, '4255831546645626.jpg', '2019-01-04 23:47:06', '2019-01-04 23:47:06');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(14, 29, '5146071544063935.JPG', '2018-12-05 22:38:55', '2018-12-05 22:38:55');
+	(54, 46, '3619321546645626.jpg', '2019-01-04 23:47:06', '2019-01-04 23:47:06');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(15, 29, '762811544063935.jpg', '2018-12-05 22:38:55', '2018-12-05 22:38:55');
+	(53, 46, '1038221546645626.jpg', '2019-01-04 23:47:06', '2019-01-04 23:47:06');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(16, 29, '3716041544063935.jpg', '2018-12-05 22:38:56', '2018-12-05 22:38:56');
+	(52, 46, '4435241546645626.jpg', '2019-01-04 23:47:06', '2019-01-04 23:47:06');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(17, 30, '6832831544064156.jpg', '2018-12-05 22:42:37', '2018-12-05 22:42:37');
+	(51, 45, '5891671546645510.jpg', '2019-01-04 23:45:10', '2019-01-04 23:45:10');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(18, 30, '1655391544064157.jpg', '2018-12-05 22:42:37', '2018-12-05 22:42:37');
+	(50, 45, '8300501546645510.jpg', '2019-01-04 23:45:10', '2019-01-04 23:45:10');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(19, 30, '4693601544064157.jpg', '2018-12-05 22:42:37', '2018-12-05 22:42:37');
+	(49, 45, '5547441546645510.jpg', '2019-01-04 23:45:10', '2019-01-04 23:45:10');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(20, 31, '9233341544064441.jpg', '2018-12-05 22:47:21', '2018-12-05 22:47:21');
+	(48, 44, '3304951546645420.jpg', '2019-01-04 23:43:40', '2019-01-04 23:43:40');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(21, 31, '8167501544064441.jpg', '2018-12-05 22:47:22', '2018-12-05 22:47:22');
+	(47, 44, '7028511546645420.jpg', '2019-01-04 23:43:40', '2019-01-04 23:43:40');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(22, 31, '3887071544064442.jpg', '2018-12-05 22:47:22', '2018-12-05 22:47:22');
+	(46, 44, '9252381546645420.jpg', '2019-01-04 23:43:40', '2019-01-04 23:43:40');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(23, 32, '3998691544064618.jpg', '2018-12-05 22:50:18', '2018-12-05 22:50:18');
+	(45, 41, '8162011546645143.jpg', '2019-01-04 23:39:04', '2019-01-04 23:39:04');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(24, 32, '1159141544064618.jpg', '2018-12-05 22:50:18', '2018-12-05 22:50:18');
+	(44, 41, '9939941546645143.jpg', '2019-01-04 23:39:03', '2019-01-04 23:39:03');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(25, 32, '2035101544064618.jpg', '2018-12-05 22:50:18', '2018-12-05 22:50:18');
+	(43, 40, '3788831546645073.jpg', '2019-01-04 23:37:53', '2019-01-04 23:37:53');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(26, 33, '2128501544064917.jpg', '2018-12-05 22:55:17', '2018-12-05 22:55:17');
+	(42, 40, '5809311546645073.jpg', '2019-01-04 23:37:53', '2019-01-04 23:37:53');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(27, 33, '5649911544064917.jpg', '2018-12-05 22:55:17', '2018-12-05 22:55:17');
+	(41, 40, '2777151546645073.jpg', '2019-01-04 23:37:53', '2019-01-04 23:37:53');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(28, 33, '3704141544064917.jpg', '2018-12-05 22:55:17', '2018-12-05 22:55:17');
+	(40, 38, '1054671546644795.jpg', '2019-01-04 23:33:16', '2019-01-04 23:33:16');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(29, 34, '3899431544065346.JPG', '2018-12-05 23:02:26', '2018-12-05 23:02:26');
+	(39, 38, '4815621546644795.jpg', '2019-01-04 23:33:15', '2019-01-04 23:33:15');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(30, 34, '119131544065346.jpg', '2018-12-05 23:02:27', '2018-12-05 23:02:27');
+	(38, 37, '5852891546644728.jpg', '2019-01-04 23:32:08', '2019-01-04 23:32:08');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(31, 34, '6905491544065347.jpg', '2018-12-05 23:02:27', '2018-12-05 23:02:27');
+	(37, 37, '4364831546644728.jpg', '2019-01-04 23:32:08', '2019-01-04 23:32:08');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(32, 35, '981591544065510.jpeg', '2018-12-05 23:05:10', '2018-12-05 23:05:10');
+	(36, 37, '5836691546644727.jpg', '2019-01-04 23:32:08', '2019-01-04 23:32:08');
 INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(33, 35, '5320811544065510.jpg', '2018-12-05 23:05:11', '2018-12-05 23:05:11');
-INSERT INTO `tblgallery` (`id`, `products_id`, `image`, `created_at`, `updated_at`) VALUES
-	(34, 35, '1153181544065511.jpg', '2018-12-05 23:05:11', '2018-12-05 23:05:11');
+	(35, 36, '9867451546644637.jpg', '2019-01-04 23:30:38', '2019-01-04 23:30:38');
 /*!40000 ALTER TABLE `tblgallery` ENABLE KEYS */;
 
 -- Dumping structure for table eCom.users
@@ -950,9 +918,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table eCom.users: 2 rows
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`, `address`, `city`, `state`, `country`, `pincode`, `mobile`) VALUES
-	(1, 'Sergen Temel', 'tmlsergen@gmail.com', NULL, '$2a$10$aEE3WfpfTp8ntvnaHN23c.8mJ9iL5eeqKVf/EmhAhPAdoZ6x9SBKi', 1, 'vTJTZ1qsisBhqn30qVqSdN3suckR37eiWhDA9H1rrjCgOJssGfoZtsNS4zhr', '2018-10-15 05:32:54', '2018-12-05 04:39:52', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', 'Türkiye', '34196', '5054702896');
+	(1, 'Sergen Temel', 'tmlsergen@gmail.com', NULL, '$2a$10$aEE3WfpfTp8ntvnaHN23c.8mJ9iL5eeqKVf/EmhAhPAdoZ6x9SBKi', 1, 'QnE5GTDq1wLqMG8c2ct74quXX1xZLSnz2QrPHW3ei0N2869y7ja8uXUe3wp5', '2018-10-15 05:32:54', '2018-12-05 04:39:52', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', 'Türkiye', '34196', '5054702896');
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`, `address`, `city`, `state`, `country`, `pincode`, `mobile`) VALUES
-	(4, 'weshare', 'weshare@gmail.com', NULL, '$2a$10$aEE3WfpfTp8ntvnaHN23c.8mJ9iL5eeqKVf/EmhAhPAdoZ6x9SBKi', NULL, '5iuZaXcYDA7Qg8g4KdQ8X2iAsMmzqlEkyX7X9Xtrj9x0WaiPdwGTacidzD5z', '2018-12-06 04:40:27', '2018-12-06 04:40:27', NULL, NULL, NULL, NULL, NULL, NULL);
+	(4, 'Onur Sezer', 'onrsezer15@gmail.com', NULL, '$2a$10$aEE3WfpfTp8ntvnaHN23c.8mJ9iL5eeqKVf/EmhAhPAdoZ6x9SBKi', NULL, '5iuZaXcYDA7Qg8g4KdQ8X2iAsMmzqlEkyX7X9Xtrj9x0WaiPdwGTacidzD5z', '2018-12-06 04:40:27', '2018-12-06 04:40:27', 'İstanbul, İstanbul', 'İstanbul', 'İstanbul', 'Türkiye', '34196', '5054702896');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
