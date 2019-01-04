@@ -23,8 +23,4 @@
 </div>
 <!--close-top-Header-menu-->
 <!--start-top-serch-->
-<div id="search">
-    <input type="text" placeholder="Ara"/>
-    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
-</div>
 <!--close-top-serch-->
