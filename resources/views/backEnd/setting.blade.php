@@ -1,5 +1,5 @@
 @extends('backEnd.layouts.master')
-@section('title','Setting')
+@section('title','Ayarlar')
 @section('content')
     <!--breadcrumbs-->
     <div id="content-header">

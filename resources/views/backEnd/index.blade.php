@@ -12,18 +12,13 @@
     <div class="container-fluid">
         <div class="quick-actions_homepage">
             <ul class="quick-actions">
-                <li class="bg_lb"><a href="index.html"> <i class="icon-dashboard"></i> My Dashboard </a></li>
-                <li class="bg_lg span3"><a href="charts.html"> <i class="icon-signal"></i> Charts</a></li>
-                <li class="bg_ly"><a href="widgets.html"> <i class="icon-inbox"></i><span class="label label-success">101</span>
-                        Widgets </a></li>
-                <li class="bg_lo"><a href="tables.html"> <i class="icon-th"></i> Tables</a></li>
-                <li class="bg_ls"><a href="grid.html"> <i class="icon-fullscreen"></i> Full width</a></li>
-                <li class="bg_lo span3"><a href="form-common.html"> <i class="icon-th-list"></i> Forms</a></li>
-                <li class="bg_ls"><a href="buttons.html"> <i class="icon-tint"></i> Buttons</a></li>
-                <li class="bg_lb"><a href="interface.html"> <i class="icon-pencil"></i> Elements</a></li>
-                <li class="bg_lg"><a href="calendar.html"> <i class="icon-calendar"></i> Calendar</a></li>
-                <li class="bg_lr"><a href="error404.html"> <i class="icon-info-sign"></i> Error</a></li>
-
+                <li class="bg_lb span12"><a href="{{ url('/admin') }}"> <i class="icon-dashboard"></i> Panele Hoşgeldiniz</a></li>
+                <li class="bg_dy span12"><a href="{{ url('/') }}"> <i class="icon-shopping-cart"></i> Siteye Dönüş</a></li>
+                <li class="bg_lg span12"><a href="{{ url('/admin/product') }}"> <i class="icon-signal"></i> Ürünler</a></li>
+                <li class="bg_lo span12"><a href="{{ url('/admin/coupon') }}"> <i class="icon-th"></i> Kuponlar</a></li>
+                <li class="bg_lv span12"><a href="{{ url('/admin/category') }}"> <i class="icon-th-list"></i> Kategoriler</a></li>
+                <li class="bg_lb span12"><a href="{{ url('/admin/user') }}"> <i class="icon-pencil"></i> Kullanıcılar</a></li>
+                <li class="bg_lr span12"><a href="{{ url('/admin/orders') }}"> <i class="icon-info-sign"></i> Siparişler</a></li>
             </ul>
         </div>
     </div>

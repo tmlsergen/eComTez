@@ -1,5 +1,5 @@
 @extends('backEnd.layouts.master')
-@section('title','Edit Category')
+@section('title','Kategori Güncelle')
 @section('content')
     <div id="breadcrumb"><a href="{{url('/admin')}}" title="Ana Sayfaya Git" class="tip-bottom"><i class="icon-home"></i> Ana
             Sayfa</a> <a href="{{route('category.index')}}">Kategoriler</a> <a href="#" class="current">Kategori

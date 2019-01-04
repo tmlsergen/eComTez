@@ -1,5 +1,5 @@
 @extends('backEnd.layouts.master')
-@section('title','Add Attribute')
+@section('title','Ürün Özellikleri')
 @section('content')
     <div id="breadcrumb"><a href="{{url('/admin')}}" title="Ana Sayfaya Git" class="tip-bottom"><i class="icon-home"></i>
             Ana Sayfa</a> <a href="{{route('product.index')}}">Ürünler</a> <a href="#" class="current">Özellik Ekle</a>

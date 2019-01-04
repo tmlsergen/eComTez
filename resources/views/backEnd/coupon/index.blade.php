@@ -1,5 +1,5 @@
 @extends('backEnd.layouts.master')
-@section('title','List Coupons')
+@section('title','Kuponlar')
 @section('content')
     <div id="breadcrumb"><a href="{{url('/admin')}}" title="Ana Sayfaya Git" class="tip-bottom"><i class="icon-home"></i>
             Ana Sayfa</a> <a href="{{route('coupon.index')}}" class="current">Kuponlar</a></div>

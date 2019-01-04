@@ -1,5 +1,5 @@
 @extends('backEnd.layouts.master')
-@section('title','Edit Coupons Page')
+@section('title','Kupon Güncelle')
 @section('content')
     <div id="breadcrumb"><a href="{{url('/admin')}}" title="Ana Sayfaya Git" class="tip-bottom"><i class="icon-home"></i>
             Ana Sayfa</a> <a href="{{route('coupon.index')}}">Kuponlar</a> <a href="#" class="current">Kupon Güncelle</a></div>
