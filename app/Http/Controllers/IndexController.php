@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Products_model::all();
+        $products = Products_model::orderByRaw('RAND()')->take(6)->get();
         return view('frontEnd.index', compact('products'));
     }
 
