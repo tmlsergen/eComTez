@@ -31,4 +31,3 @@
 
 > npm run dev
 
-## Project NOT FINISH YET
