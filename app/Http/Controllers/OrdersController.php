@@ -59,9 +59,9 @@ class OrdersController extends Controller
             'user_email' => 'required|email',
             'user_total' => 'required',
             'card_name' => 'required',
-            'card_number' => 'required|integer|min:16|max:16',
-            'date' => 'required|integer|min:4|max:4',
-            'cvc' => 'required|integer|min:3|max:3',
+            'card_number' => 'required|integer',
+            'date' => 'required|integer',
+            'cvc' => 'required|integer',
             'card_type' => 'required',
         ]);
         Cart_model::truncate();
