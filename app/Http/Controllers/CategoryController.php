@@ -39,6 +39,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    /*
     public function checkCateName(Request $request){
         $data=$request->all();
         $category_name=$data['name'];
@@ -48,7 +49,7 @@ class CategoryController extends Controller
         }else {
             echo "false"; die();
         }
-    }
+    }*/
     public function store(Request $request)
     {
         $this->validate($request,[
